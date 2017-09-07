@@ -13,6 +13,7 @@ public class Calculator {
 			System.out.println("new------------------------------------------------new");
 			j++;
 		}
+		System.out.println("Calculation completed");
 	}
 
 }
