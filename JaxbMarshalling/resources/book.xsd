@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://wrox.com/book/types" xmlns:wbt="http://wrox.com/book/types" elementFormDefault="qualified" attributeFormDefault="unqualified">
+<xs:element name="book" type="wbt:book"/>
+<xs:complexType name="book">
+         <xs:sequence>
+            <xs:element name="isbn" type="xs:int"/>
+            <xs:element name="title" type="xs:string"/>
+            <xs:element name="auther" type="wbt:auther"/>
+            <xs:element name="publisher" type="wbt:publisher"/>
+         </xs:sequence>	
+	</xs:complexType>
+<xs:complexType name="auther">
+         <xs:sequence>
+            <xs:element name="auther-name" type="xs:string"/>
+            <xs:element name="date-of-birth" type="xs:date"/>
+         </xs:sequence>	
+	</xs:complexType>
+
+	<xs:complexType name="publisher">
+         <xs:sequence>
+            <xs:element name="publisher-name" type="xs:string"/>
+            <xs:element name="est-dt" type="xs:date"/>
+         </xs:sequence>	
+	</xs:complexType>
+</xs:schema>
