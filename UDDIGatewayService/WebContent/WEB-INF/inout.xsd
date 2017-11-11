@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://uddi.org/digitalindiatx/types" xmlns:udt="http://uddi.org/digitalindiatx/types" elementFormDefault="qualified">
+
+<xsd:element name="to-account" type="udt:uddi-payment"/>
+<xsd:element name="from-account" type="udt:uddi-payment"/>
+<xsd:element name="balance" type="xsd:double"/>
+<xsd:element name="recept" type="udt:pay-recept"/>
+
+<xsd:complexType name="uddi-payment">
+	<xsd:sequence>
+		<xsd:element name="accountNo" type="xsd:string" />
+		<xsd:element name="accountHolderName" type="xsd:string" />
+		<xsd:element name="ifscCode" type="xsd:string" />
+		<xsd:element name="mobileNo" type="xsd:string" />
+	</xsd:sequence>
+</xsd:complexType>
+
+<xsd:complexType name="pay-recept">
+<xsd:sequence>
+	<xsd:element name="fromAccount" type="xsd:string"/>
+	<xsd:element name="toaccount" type="xsd:string"/>
+	<xsd:element name="amount" type="xsd:double"/>
+	<xsd:element name="trnsferDate" type="xsd:date"/>
+</xsd:sequence>
+</xsd:complexType>
+
+</xsd:schema>

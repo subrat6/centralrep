@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:uds="http://uddi.org/digitalindiatx/service" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="UddiGateWayManager" targetNamespace="http://uddi.org/digitalindiatx/service">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://uddi.org/digitalindiatx/service" elementFormDefault="qualified">
+    	<xsd:include schemaLocation="wrapper.xsd"/>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="UDDIManager_Pay">
+    <wsdl:part element="uds:pay" name="inPay"/>
+  </wsdl:message>
+  <wsdl:message name="UDDIManager_PayResponse">
+    <wsdl:part element="uds:payResponse" name="returnPayResponse"/>
+  </wsdl:message>
+  <wsdl:portType name="UddiGateWayManager">
+    <wsdl:operation name="pay">
+      <wsdl:input message="uds:UDDIManager_Pay"/>
+      <wsdl:output message="uds:UDDIManager_PayResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="UddiGateWayManagerSOAPBinding" type="uds:UddiGateWayManager">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="pay">
+      <soap:operation soapAction="http://uddi.org/digitalindiatx/service/pay"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="UddiGateWayManager">
+    <wsdl:port binding="uds:UddiGateWayManagerSOAPBinding" name="UddiGateWayManagerSOAPPort">
+      <soap:address location="http://www.example.org/"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://uddi.org/digitalindiatx/service" xmlns:uds="http://uddi.org/digitalindiatx/service"
+	xmlns:udt="http://uddi.org/digitalindiatx/types" elementFormDefault="qualified">
+	<xsd:import namespace="http://uddi.org/digitalindiatx/types"
+		schemaLocation="inout.xsd" />
+	<xsd:element name="pay">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="udt:to-account" />
+				<xsd:element ref="udt:from-account" />
+				<xsd:element ref="udt:balance" />
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+
+	<xsd:element name="payResponse">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="udt:recept" />
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+
+
+</xsd:schema>
