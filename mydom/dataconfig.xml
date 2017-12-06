@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persist-config>
+	<db-database-config>
+		<database-driverclass-name></database-driverclass-name>
+		<database-url></database-url>
+		<database-username></database-username>
+		<database-password></database-password>
+	</db-database-config>
+	<database-sql-query></database-sql-query>
+</persist-config>
